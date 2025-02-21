@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<style>
+/**{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+}
+
+.container{
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgb(0, 0, 0, 0.1);
+    width: 30%;
+}
+h1{
+    text-align: center;
+    margin-bottom:20px ;
+}
+form{
+    display: flex;
+}
+input[type="text"]{
+    padding: 8px;
+    font-size: 16px;
+}
+button{
+    padding: 8px 16px;
+    background-color: #4caf50;
+    color: #fff;
+    border:none;
+    cursor: pointer;
+    font-size: 16px;
+}
+button:hover{
+    background-color: #45a049;
+}
+ul{
+    list-style-type: none;
+}
+li{
+    margin-bottom: 8px;
+    padding: 8px;
+    background-color: #f9f9f9;
+    border-radius: 4px;
+}*/
+
+
+
+
+body{
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2;
+}
+
+.calculate{
+    max-width: 500px;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1) ;
+}
+
+h1{
+    text-align: center;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+}
+
+label{
+    margin-bottom: 10px;
+}
+
+input{
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 3px;    
+}
+
+button{
+    padding: 10px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+button:hover{
+    background-color: #3e8e41;
+}
+
+.results{
+    margin-top: 30px;
+    border-top: 1px solid #ccc;
+    padding-top: 20px;
+}
+
+.results p {
+    margin-bottom: 15px;
+}
+
+.results span {
+    font-weight: bold;
+}
+    </style>
+<body>
+
+<!-- 
+	<div class="container">
+                <h1 class="head">TODO LIST</h1>
+                <form>
+                <input type="text" placeholder="Add a new number" id="todo-input">
+                <button type="submit" id="add-btn">Add</button>
+                </form>
+                <ul id="todo-list">
+                	
+                </ul>
+            </div> -->
+
+<!-- <script>
+const addButton = document.getElementById('add-btn');
+  const todoList = document.getElementById('todo-list');
+
+  addButton.addEventListener('click', function () {
+    const newItem = document.createElement('li'); 
+    newItem.classList.add('todo-item');
+
+    
+    const newForm = document.createElement('form');
+    newForm.classList.add('todo-form');
+    newForm.innerHTML = `
+      <input type="text" placeholder="New Task">
+      <button type="submit">Submit</button>
+    `;
+
+    newItem.appendChild(newForm);
+    todoList.appendChild(newItem);
+  });
+</script> -->
+
+
+
+
+
+<!-- <div class="container">
+  <h1 class="head">TODO LIST</h1>
+  <form id="todo-form">
+    <input type="text" placeholder="Add a new task" id="todo-input">
+    <button type="button" id="add-btn">Add</button>
+  </form>
+  <ul id="todo-list"></ul>
+</div> -->
+
+
+
+
+
+  <div class="calculate">
+        <h1>Tip Calculator</h1>
+        <form>
+            <label>Bill Amount ($)</label>
+            <input type="nubmer" id="bill-amount" required>
+            <label>Tip Percentage (%)</label>
+            <input type="number" id="tip-percentage" required>
+            <button type="button" onclick="calculateTip()">Calculate</button>
+        </form>
+
+        <div class="results">
+            <p>Tip Amount: <span id="tip-amount">0</span></p>
+            <p>Total Amount: <span id="total-amount">0</span></p>
+        </div>
+
+
+
+
+
+
+<script>
+
+  // const addButton = document.getElementById('add-btn');
+  // const todoInput = document.getElementById('todo-input');
+  // const todoList = document.getElementById('todo-list');
+
+
+  // addButton.addEventListener('click', function () {
+  //   event.preventDefault();
+  //   const taskText = todoInput.value.trim(); 
+  //   if (taskText !== "") {
+  //     const newItem = document.createElement('li'); 
+  //     newItem.classList.add('todo-item');
+  //      newItem.innerHTML = `<span>taskText</span><button class="remove-btn" onclick>Remove</button>`;
+
+
+  //     todoList.appendChild(newItem);
+
+  //     todoInput.value = '';
+  //   } else {
+  //     alert("Please enter a task!");
+  //   }
+  // });
+
+
+
+
+// function calculateTip(){
+
+
+//     // get the input type values
+//     const billAmount = parseFloat(document.getElementById("bill-amount").value);
+//     const tipPercentage = parseFloat(document.getElementById("tip-percentage").value);
+//     // Calculate the Tip and Total Amount
+    
+//     const tipAmount = billAmount * (tipPercentage/100);
+//     const totalAmount = tipAmount + billAmount;
+   
+//     // Display the Results
+//     document.getElementById("tip-amount").textContent = '$' + tipAmount.toFixed(2);
+//     document.getElementById("total-amount").textContent = '$' + totalAmount.toFixed(2);
+    
+// }
+
+// function calculateTip(){
+
+
+//     // get the input type values
+//     const billAmount = parseFloat($("bill-amount").value);
+//     const tipPercentage = parseFloat($("tip-percentage").value);
+//     // Calculate the Tip and Total Amount
+    
+//     const tipAmount = billAmount * (tipPercentage/100);
+//     const totalAmount = tipAmount + billAmount;
+   
+//     // Display the Results
+//     $("tip-amount").textContent = '$' + tipAmount.toFixed(2);
+//     $("total-amount").textContent = '$' + totalAmount.toFixed(2);
+    
+// }
+
+
+
+
+
+</script>
+
+
+</body>
+
+</html>
